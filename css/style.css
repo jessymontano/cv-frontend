@@ -1,0 +1,253 @@
+/*
+Cambios:
+- Agregué un degradado verde al header
+- Centré el nombre y título
+- Modifiqué la foto para que sea circular y tenga bordes y sombra
+- Agregué una animación al hacer hover en la foto
+- Agregué íconos al título de cada sección y líneas separadoras
+- Separé el contenido del inicio en 2 columnas
+- Agregué barras de progreso circulares en la sección de habilidades
+- Agregué íconos de redes sociales en el footer
+- Agregué íconos de teléfono y correo, así como un botón para descargar el CV en el footer
+- Agregué una imagen de fondo a la página
+*/
+
+/* importa el tipo de letra roboto */
+@import url("https://fonts.cdnfonts.com/css/roboto");
+
+/* aplica a todo el documento.*/
+body {
+  font-family: Roboto, Arial, Helvetica, sans-serif; /* Establece el tipo de letra en todo el documento */
+  margin: 0; /* margin 0 quita el espacio exterior */
+  padding: 0; /* padding 0 quita el espacio interior' */
+  box-sizing: border-box;
+  background: url(../img/bg.jpg);
+  background-repeat: repeat;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
+.inicio {
+  margin: 0 5vw;
+  padding: 0 1vw;
+}
+
+/* flexbox responsivo */
+@media (max-width: 600px) {
+  main {
+    flex-direction: column;
+  }
+}
+
+header,
+nav,
+section footer {
+  padding: 12px; /* padding 12px añade un espacio interno entre el contenido y el borde.*/
+  margin: 8px; /* Añade espacio alrededor de los componentes */
+}
+
+/* cambia el fondo del header a un gris claro */
+header {
+  background: linear-gradient(
+    90deg,
+    #027b39,
+    #079f6f
+  ) !important; /* degradado en colores */
+  color: #fff;
+  text-align: center;
+}
+
+/* agregar un hover en el menu de navegacion */
+nav a {
+  text-decoration: none;
+  color: #000;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+nav a:hover {
+  background-color: rgba(237, 235, 235, 0.671) (255, 255, 255, 0.27); /* color de fondo al pasar el mouse */
+  color: #fff; /* color del texto */
+  transform: scale(1.1); /* se eleva un poco */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
+}
+
+/* selecciona las listas dentro del nav */
+nav ul {
+  list-style: none; /* Quita las viñetas */
+  padding: 0; /* Elimina el espacio interior extra que tienen las listas por defecto */
+}
+
+/* aplica a los li de la lista dentro del nav  */
+nav li {
+  display: inline; /* Hace que los elementos se muestren en línea*/
+  margin-right: 10px; /* Deja un espacio de 10 px a la derecha de cada enlace */
+}
+
+img {
+  max-width: 100%; /* Evita que la imagen se salga de la pantalla, se ajusta al tamaño. */
+  height: auto; /* Mantiene la proporción correcta de la imagen al redimensionarse. */
+}
+header img {
+  border: 3px solid #ddd; /* borde gris claro */
+  border-radius: 50%; /* esquinas redondeadas */
+  padding: 2px; /* pequeño espacio interno */
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.3);
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+header img:hover {
+  transform: rotateY(180deg);
+}
+/* Aplica a los elementos con clase muted */
+.muted {
+  color: gray; /* Texto gris */
+  font-size: 0.9em; /* Tamaño de letra */
+}
+
+h1 {
+  text-align: center; /* Centra el texto */
+}
+
+/* colorear titulos de secciones */
+h2 {
+  color: #079f6f;
+  border-bottom: 2px solid #079f6f;
+  padding-bottom: 4px;
+}
+
+h1,
+h2,
+h3 {
+  letter-spacing: 1px; /* aumenta un poco el espacio entre letras*/
+}
+
+h1,
+h2 {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* sombras en las secciones */
+section {
+  background: #fff;
+  border: 1px solid #ddd; /* Borde fino */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 12px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* propiedades del formulario y boton */
+input,
+textarea,
+button {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button:hover {
+  background-color: #027b39; /* azul mas oscuro*/
+  transform: translateY(-2px); /* se eleva un poco */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* destacar información */
+.highlight {
+  background-color: #fffa9e; /* amarillo suave */
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th,
+td {
+  padding: 10px 12px;
+  text-align: center;
+}
+
+thead th {
+  position: sticky; /* si la tabla es alta */
+  top: 72px; /* se ajusta a la parte superior */
+  background-color: #34495e;
+  color: #fff;
+  z-index: 1;
+  letter-spacing: 0.5px;
+}
+
+tbody tr {
+  border-bottom: 1px solid #ebe5e9;
+}
+
+/* sirve para dar estilo alternado en cada fila de pares e impares */
+table tr:nth-child(even) {
+  /* nth-child(even)  significa cada fila que ocupa una posición par */
+  background-color: #8596a1;
+}
+
+table tr:nth-child(odd) {
+  /* nth-child(odd) significa cada fila que ocupa una posición impar */
+  background-color: #da7878;
+}
+
+footer button {
+  margin: 0 auto;
+  display: block;
+  width: 40%;
+  background-color: #079f6f;
+  color: #fff;
+}
+
+footer a {
+  text-decoration: none;
+  color: #046e4c;
+}
+
+.progress {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+.javascript {
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(#079f6f 80%, #ddd 0);
+}
+.python {
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(#079f6f 50%, #ddd 0);
+}
+.react {
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(#079f6f 70%, #ddd 0);
+}
+.node {
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(#079f6f 80%, #ddd 0);
+}
+.mysql {
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(#079f6f 70%, #ddd 0);
+}
+.git {
+  background: radial-gradient(closest-side, white 79%, transparent 80% 100%),
+    conic-gradient(#079f6f 85%, #ddd 0);
+}
+.habilidades {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  padding: 20px;
+}
