@@ -25,22 +25,6 @@ body {
   background-repeat: repeat;
 }
 
-main {
-  display: flex;
-  flex-direction: row;
-}
-.inicio {
-  margin: 0 5vw;
-  padding: 0 1vw;
-}
-
-/* flexbox responsivo */
-@media (max-width: 600px) {
-  main {
-    flex-direction: column;
-  }
-}
-
 header,
 nav,
 section footer {
@@ -250,4 +234,12 @@ footer a {
   gap: 20px;
   justify-items: center;
   padding: 20px;
+}
+
+#skillmap img {
+  display: block;
+  margin: 20px auto;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
